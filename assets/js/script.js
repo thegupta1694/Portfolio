@@ -123,7 +123,9 @@ const formBtn = document.querySelector("[data-form-btn]");
 // Initialize EmailJS
 (function() {
   if (typeof emailjs !== 'undefined') {
-    emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+    // Use environment variables if available, otherwise fallback to hardcoded values
+    const publicKey = process.env.EMAILJS_PUBLIC_KEY || 'k7Gl822KcCIbLfqyN';
+    emailjs.init(publicKey);
   } else {
     console.warn('EmailJS not loaded yet');
   }
@@ -162,7 +164,10 @@ form.addEventListener("submit", function(e) {
   
   // Send email using EmailJS
   if (typeof emailjs !== 'undefined') {
-    emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, templateParams)
+    // Use environment variables if available, otherwise fallback to hardcoded values
+    const serviceId = process.env.EMAILJS_SERVICE_ID || 'service_05mkxsq';
+    const templateId = process.env.EMAILJS_TEMPLATE_ID || 'template_w7rrke2';
+    emailjs.send(serviceId, templateId, templateParams)
     .then(function(response) {
       // Success
       alert("Message sent successfully! I'll get back to you soon.");
