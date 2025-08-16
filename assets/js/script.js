@@ -120,7 +120,8 @@ const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
-// Initialize EmailJS
+// Initialize EmailJS - commented out since form is disabled
+/*
 (function() {
   if (typeof emailjs !== 'undefined') {
     // Use hardcoded values for client-side JavaScript
@@ -130,7 +131,10 @@ const formBtn = document.querySelector("[data-form-btn]");
     console.warn('EmailJS not loaded yet');
   }
 })();
+*/
 
+// Form functionality - commented out since form is disabled
+/*
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
@@ -187,6 +191,7 @@ form.addEventListener("submit", function(e) {
     formBtn.querySelector("span").textContent = originalText;
   }
 });
+*/
 
 
 
