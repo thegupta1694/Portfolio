@@ -123,8 +123,8 @@ const formBtn = document.querySelector("[data-form-btn]");
 // Initialize EmailJS
 (function() {
   if (typeof emailjs !== 'undefined') {
-    // Use environment variables if available, otherwise fallback to hardcoded values
-    const publicKey = process.env.EMAILJS_PUBLIC_KEY || 'k7Gl822KcCIbLfqyN';
+    // Use hardcoded values for client-side JavaScript
+    const publicKey = 'k7Gl822KcCIbLfqyN';
     emailjs.init(publicKey);
   } else {
     console.warn('EmailJS not loaded yet');
@@ -164,9 +164,9 @@ form.addEventListener("submit", function(e) {
   
   // Send email using EmailJS
   if (typeof emailjs !== 'undefined') {
-    // Use environment variables if available, otherwise fallback to hardcoded values
-    const serviceId = process.env.EMAILJS_SERVICE_ID || 'service_05mkxsq';
-    const templateId = process.env.EMAILJS_TEMPLATE_ID || 'template_w7rrke2';
+    // Use hardcoded values for client-side JavaScript
+    const serviceId = 'service_05mkxsq';
+    const templateId = 'template_w7rrke2';
     emailjs.send(serviceId, templateId, templateParams)
     .then(function(response) {
       // Success
